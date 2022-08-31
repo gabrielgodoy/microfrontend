@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2 # Official GitHub Action used to check-out a repository, so a workflow can access it
-      - run: npm install
+      - run: npm install --force
       - run: npm run build
         env:
           PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}

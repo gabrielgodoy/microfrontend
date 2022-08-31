@@ -1,13 +1,12 @@
-import React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Button from '@mui/material/Button'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import { makeStyles } from '@mui/styles'
-import { Link as RouterLink } from 'react-router-dom'
-import { useTheme } from '@mui/material/styles'
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import { Link as RouterLink } from 'react-router-dom';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   '@global': {
     ul: {
       margin: 0,
@@ -19,50 +18,50 @@ const useStyles = makeStyles(() => ({
     },
   },
   appBar: {
-    borderBottom: `1px solid ${useTheme().palette.divider}`,
+    borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbar: {
     flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
   link: {
-    margin: useTheme().spacing(1, 1.5),
+    margin: theme.spacing(1, 1.5),
   },
   heroContent: {
-    padding: useTheme().spacing(8, 0, 6),
+    padding: theme.spacing(8, 0, 6),
   },
   cardHeader: {
     backgroundColor:
-      useTheme().palette.type === 'light'
-        ? useTheme().palette.grey[200]
-        : useTheme().palette.grey[700],
+      theme.palette.type === 'light'
+        ? theme.palette.grey[200]
+        : theme.palette.grey[700],
   },
   cardPricing: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'baseline',
-    marginBottom: useTheme().spacing(2),
+    marginBottom: theme.spacing(2),
   },
   footer: {
-    borderTop: `1px solid ${useTheme().palette.divider}`,
-    marginTop: useTheme().spacing(8),
-    paddingTop: useTheme().spacing(3),
-    paddingBottom: useTheme().spacing(3),
-    [useTheme().breakpoints.up('sm')]: {
-      paddingTop: useTheme().spacing(6),
-      paddingBottom: useTheme().spacing(6),
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
     },
   },
-}))
+}));
 
 export default function Header({ signedIn, onSignOut }) {
-  const classes = useStyles()
+  const classes = useStyles();
 
   const onClick = () => {
     if (signedIn && onSignOut) {
-      onSignOut()
+      onSignOut();
     }
-  }
+  };
 
   return (
     <React.Fragment>
@@ -95,5 +94,5 @@ export default function Header({ signedIn, onSignOut }) {
         </Toolbar>
       </AppBar>
     </React.Fragment>
-  )
+  );
 }

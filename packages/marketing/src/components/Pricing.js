@@ -1,18 +1,17 @@
-import React from 'react'
-import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardHeader from '@mui/material/CardHeader'
-import Grid from '@mui/material/Grid'
-import StarIcon from '@mui/icons-material/StarBorder'
-import Typography from '@mui/material/Typography'
-import Link from '@mui/material/Link'
-import { makeStyles } from '@mui/styles'
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-import { Link as RouterLink } from 'react-router-dom'
-import { useTheme } from '@mui/material/styles'
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import Grid from '@material-ui/core/Grid';
+import StarIcon from '@material-ui/icons/StarBorder';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import { Link as RouterLink } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -24,7 +23,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
-  )
+  );
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -42,34 +41,34 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   link: {
-    margin: useTheme().spacing(1, 1.5),
+    margin: theme.spacing(1, 1.5),
   },
   heroContent: {
-    padding: useTheme().spacing(8, 0, 6),
+    padding: theme.spacing(8, 0, 6),
   },
   cardHeader: {
     backgroundColor:
-      useTheme().palette.type === 'light'
-        ? useTheme().palette.grey[200]
-        : useTheme().palette.grey[700],
+      theme.palette.type === 'light'
+        ? theme.palette.grey[200]
+        : theme.palette.grey[700],
   },
   cardPricing: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'baseline',
-    marginBottom: useTheme().spacing(2),
+    marginBottom: theme.spacing(2),
   },
   footer: {
-    borderTop: `1px solid ${useTheme().palette.divider}`,
-    marginTop: useTheme().spacing(8),
-    paddingTop: useTheme().spacing(3),
-    paddingBottom: useTheme().spacing(3),
-    [useTheme().breakpoints.up('sm')]: {
-      paddingTop: useTheme().spacing(6),
-      paddingBottom: useTheme().spacing(6),
+    borderTop: `1px solid ${theme.palette.divider}`,
+    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: theme.spacing(6),
+      paddingBottom: theme.spacing(6),
     },
   },
-}))
+}));
 
 const tiers = [
   {
@@ -109,7 +108,7 @@ const tiers = [
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
   },
-]
+];
 const footers = [
   {
     title: 'Company',
@@ -138,10 +137,10 @@ const footers = [
     title: 'Legal',
     description: ['Privacy policy', 'Terms of use'],
   },
-]
+];
 
 export default function Pricing() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <React.Fragment>
@@ -251,5 +250,5 @@ export default function Pricing() {
       </Container>
       {/* End footer */}
     </React.Fragment>
-  )
+  );
 }
